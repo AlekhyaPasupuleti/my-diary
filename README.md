@@ -1,28 +1,111 @@
 # MyDiary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+**MyDiary** is a full-stack web application that allows users to maintain a personal diary online. It includes a modern Angular frontend and a lightweight Node.js backend, with MongoDB used as the data store.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🌟 Features
 
-## Code scaffolding
+- Create, edit, and delete diary entries
+- Simple and intuitive UI
+- Data persisted using MongoDB
+- RESTful API for backend operations
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Frontend
+- Angular
+- TypeScript
+- HTML/CSS
 
-## Running unit tests
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 📁 Project Structure
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+MyDiary-main/
+├── backend/                  # Backend API built with Node.js and Express
+│   ├── entry-schema.js       # Mongoose schema for diary entries
+│   └── rest.js               # API endpoints
+├── src/                      # Angular frontend application
+│   └── app/                  # Angular components and modules
+├── .vscode/                  # Editor config files
+├── angular.json              # Angular CLI config
+├── package.json              # Project dependencies
+├── tsconfig.json             # TypeScript config
+└── README.md                 # Project documentation
+```
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# MyDiary
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/MyDiary.git
+cd MyDiary-main
+```
+
+---
+
+### 2. Install Dependencies
+
+#### For Frontend (Angular)
+
+```bash
+npm install
+```
+
+#### For Backend
+
+```bash
+cd backend
+npm install
+```
+
+---
+
+### 3. Set Up MongoDB
+
+Make sure you have MongoDB running locally on your machine (default port 27017). You can change the MongoDB connection string in `backend/rest.js` if needed.
+
+---
+
+### 4. Run the Application
+
+#### Start the Backend Server
+
+```bash
+cd backend
+node rest.js
+```
+
+By default, the backend server will run on `http://localhost:3000`.
+
+#### Start the Frontend Angular App
+
+In a new terminal:
+
+```bash
+cd ..
+ng serve
+```
+
+This will run the frontend on `http://localhost:4200`.
+
+---
+
+## 🔍 Example API Endpoints
+
+- `GET /api/entries` – Get all diary entries
+- `POST /api/entries` – Create a new entry
+- `DELETE /api/entries/:id` – Delete an entry by ID
